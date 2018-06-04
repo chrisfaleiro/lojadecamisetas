@@ -25,4 +25,4 @@ Things you may want to cover:
 * ...
 =======
 # ruby_labs
-Exercícios para aprendizado de Ruby
+Projeto desenvolvido durante o curso do Alura - Ruby on Rails 4: do zero à web
