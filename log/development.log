@@ -227,3 +227,413 @@ Processing by ProdutosController#busca as HTML
 Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDepartamentos (20180605002739)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "departamentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180605002739"]]
+  [1m[35m (29.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-06-04 21:29:02 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (1.1ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (0.3ms)
+  Rendered produtos/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 257ms (Views: 246.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/Departamento" for 127.0.0.1 at 2018-06-04 21:29:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/Departamento"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/departamentos" for 127.0.0.1 at 2018-06-04 21:29:20 -0300
+Processing by DepartamentosController#index as HTML
+  Rendering departamentos/index.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered departamentos/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDepartamentoIdToProduto (20180605003140)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "produtos" ADD "departamento_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180605003140"]]
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/departamentos" for 127.0.0.1 at 2018-06-04 21:36:26 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DepartamentosController#index as HTML
+  Rendering departamentos/index.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered departamentos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-04 21:36:29 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (1.1ms)
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (0.3ms)
+  Rendered produtos/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 46ms (Views: 37.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-06-04 21:36:31 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered produtos/new.html.erb within layouts/application (253.5ms)
+Completed 200 OK in 277ms (Views: 276.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/departamentos/new" for 127.0.0.1 at 2018-06-04 21:36:36 -0300
+Processing by DepartamentosController#new as HTML
+  Rendering departamentos/new.html.erb within layouts/application
+  Rendered departamentos/_form.html.erb (1.7ms)
+  Rendered departamentos/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 41ms (Views: 26.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/departamentos" for 127.0.0.1 at 2018-06-04 21:36:43 -0300
+Processing by DepartamentosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VTJLur9+zgJAtyrYcMokJuU/XL8FE2VRAzFnew66n1CNmpPWLwq4PvT4oRVwkV71e0TU0XMaMGNYGnULSNiw+Q==", "departamento"=>{"nome"=>"Camisas de banda"}, "commit"=>"Criar Departamento"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "departamentos" ("nome", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["nome", "Camisas de banda"], ["created_at", "2018-06-05 00:36:43.368307"], ["updated_at", "2018-06-05 00:36:43.368307"]]
+  [1m[35m (28.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/departamentos/1
+Completed 302 Found in 34ms (ActiveRecord: 29.1ms)
+
+
+Started GET "/departamentos/1" for 127.0.0.1 at 2018-06-04 21:36:43 -0300
+Processing by DepartamentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering departamentos/show.html.erb within layouts/application
+  Rendered departamentos/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2018-06-04 21:36:45 -0300
+Processing by DepartamentosController#index as HTML
+  Rendering departamentos/index.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered departamentos/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-04 21:36:48 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (1.3ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (0.9ms)
+  Rendered produtos/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 51ms (Views: 49.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-06-04 21:36:51 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered produtos/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2018-06-04 21:37:07 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a1ODqFjI8YKjphV8My6g+5wYzxkhFFhV34/1NY9HYdrZAN9IRSeIl61Ha6IDcpEcTESx4rz7mdv/aVgWHXTVrQ==", "produto"=>{"nome"=>"Iron Maiden", "descricao"=>"Camisa do Eddie", "departamento_id"=>"1", "quantidade"=>"10", "preco"=>"35"}, "commit"=>"Criar o produto"}
+Unpermitted parameter: :departamento_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/new.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :departamento %>
+    19:     <%= f.collection_select :departamento_id, @departamentos, :id, :nome %>
+    20: 
+    21: </div>
+    22: 
+  
+app/views/produtos/new.html.erb:19:in `block in _app_views_produtos_new_html_erb___3434162068190193798_70072862320540'
+app/views/produtos/new.html.erb:5:in `_app_views_produtos_new_html_erb___3434162068190193798_70072862320540'
+app/controllers/produtos_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" ORDER BY "departamentos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/produtos" for 127.0.0.1 at 2018-06-04 21:40:33 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/produtos"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/produtos" for 127.0.0.1 at 2018-06-04 21:40:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/produtos"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-06-04 21:40:39 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (1.1ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [1 times] (0.3ms)
+  Rendered produtos/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-06-04 21:40:41 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered produtos/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2018-06-04 21:41:03 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Lunxy5Zh5sQP/eN4Ou2NympZCbq4ZdDRw8lO4r7Nk9K6PsnM7b+jh7eiVPQt4fQ+fUa3XcOVs1n6YgYGMiCOA==", "produto"=>{"nome"=>"CamisadoIron Maiden", "descricao"=>"Camisa do Eddie", "departamento_id"=>"1", "quantidade"=>"10", "preco"=>"35"}, "commit"=>"Criar o produto"}
+Unpermitted parameter: :departamento_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :departamento %>
+    19:     <%= f.collection_select :departamento_id, @departamentos, :id, :nome %>
+    20: 
+    21: </div>
+    22: 
+  
+app/views/produtos/new.html.erb:19:in `block in _app_views_produtos_new_html_erb___3434162068190193798_70072829605420'
+app/views/produtos/new.html.erb:5:in `_app_views_produtos_new_html_erb___3434162068190193798_70072829605420'
+app/controllers/produtos_controller.rb:14:in `create'
+Started POST "/produtos" for 127.0.0.1 at 2018-06-04 21:41:35 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Lunxy5Zh5sQP/eN4Ou2NympZCbq4ZdDRw8lO4r7Nk9K6PsnM7b+jh7eiVPQt4fQ+fUa3XcOVs1n6YgYGMiCOA==", "produto"=>{"nome"=>"CamisadoIron Maiden", "descricao"=>"Camisa do Eddie", "departamento_id"=>"1", "quantidade"=>"10", "preco"=>"35"}, "commit"=>"Criar o produto"}
+Unpermitted parameter: :departamento_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :departamento %>
+    19:     <%= f.collection_select :departamento_id, @departamentos, :id, :nome %>
+    20: 
+    21: </div>
+    22: 
+  
+app/views/produtos/new.html.erb:19:in `block in _app_views_produtos_new_html_erb___3434162068190193798_70072828865860'
+app/views/produtos/new.html.erb:5:in `_app_views_produtos_new_html_erb___3434162068190193798_70072828865860'
+app/controllers/produtos_controller.rb:14:in `create'
+Started POST "/produtos" for 127.0.0.1 at 2018-06-04 21:44:06 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Lunxy5Zh5sQP/eN4Ou2NympZCbq4ZdDRw8lO4r7Nk9K6PsnM7b+jh7eiVPQt4fQ+fUa3XcOVs1n6YgYGMiCOA==", "produto"=>{"nome"=>"CamisadoIron Maiden", "descricao"=>"Camisa do Eddie", "departamento_id"=>"1", "quantidade"=>"10", "preco"=>"35"}, "commit"=>"Criar o produto"}
+Unpermitted parameter: :departamento_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/new.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    16: 
+    17: <div class="form-group">
+    18:     <%= f.label :departamento %>
+    19:     <%= f.collection_select :departamento_id, @departamentos, :id, :nome %>
+    20: 
+    21: </div>
+    22: 
+  
+app/views/produtos/new.html.erb:19:in `block in _app_views_produtos_new_html_erb___3434162068190193798_70072868509300'
+app/views/produtos/new.html.erb:5:in `_app_views_produtos_new_html_erb___3434162068190193798_70072868509300'
+app/controllers/produtos_controller.rb:14:in `create'
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/produtos" for 127.0.0.1 at 2018-06-04 21:44:43 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Lunxy5Zh5sQP/eN4Ou2NympZCbq4ZdDRw8lO4r7Nk9K6PsnM7b+jh7eiVPQt4fQ+fUa3XcOVs1n6YgYGMiCOA==", "produto"=>{"nome"=>"CamisadoIron Maiden", "descricao"=>"Camisa do Eddie", "departamento_id"=>"1", "quantidade"=>"10", "preco"=>"35"}, "commit"=>"Criar o produto"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "produtos" ("nome", "descricao", "quantidade", "preco", "created_at", "updated_at", "departamento_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "CamisadoIron Maiden"], ["descricao", "Camisa do Eddie"], ["quantidade", 10], ["preco", 35.0], ["created_at", "2018-06-05 00:44:43.332041"], ["updated_at", "2018-06-05 00:44:43.332041"], ["departamento_id", 1]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-04 21:44:43 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (1.3ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (0.5ms)
+  Rendered produtos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-06-04 21:46:29 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered produtos/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-04 21:47:28 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (1.0ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (0.5ms)
+  Rendered produtos/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?class=btn+btn-primary" for 127.0.0.1 at 2018-06-04 21:47:31 -0300
+Processing by ProdutosController#index as HTML
+  Parameters: {"class"=>"btn btn-primary"}
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (10.9ms)
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (1.1ms)
+  Rendered produtos/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-04 21:49:00 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (1.5ms)
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 2]]
+  Rendered collection of produtos/_produto.html.erb [2 times] (0.8ms)
+  Rendered produtos/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2018-06-04 21:49:02 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  Rendered produtos/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
