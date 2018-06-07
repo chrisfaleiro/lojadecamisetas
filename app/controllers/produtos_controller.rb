@@ -9,7 +9,6 @@ class ProdutosController < ApplicationController
 
   def create
     @produto = Produto.new produto_params
-    @departamentos = Departamento.all
     if @produto.save
       flash[:notice] = "Produto salvo com sucesso"
       redirect_to root_url
@@ -24,17 +23,15 @@ class ProdutosController < ApplicationController
   end
 
   def edit
-    @departamentos = Departamento.all
-    render :new
+    renderiza :edit
   end
 
   def update
-    @departamentos = Departamento.all
     if @produto.update produto_params
       flash[:notice] = "Produto atualizado com sucesso"
       redirect_to root_url
     else
-      render :new
+      renderiza :edit
     end
   end
 
@@ -45,12 +42,12 @@ class ProdutosController < ApplicationController
 
   def new
     @produto = Produto.new
-    @departamentos = Departamento.all
+    renderiza :new
   end
 
   private
 
-  def renderiza_new 
+  def renderiza (view) 
     @departamentos = Departamento.all
     render :new
   end
